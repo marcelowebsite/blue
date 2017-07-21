@@ -14,5 +14,5 @@ $app->get('/hello/{name}', function (Request $request, Response $response) {
 });
 
 //import customers route
-require '../src/routes/customers.php';
+require '../src/routes/programs.php';
 $app->run();
