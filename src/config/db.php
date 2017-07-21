@@ -4,7 +4,7 @@
         private $dbhost = 'localhost';
         private $dbuser = 'root';
         private $dbpass = '';
-        private $dbname = 'blueprints';
+        private $dbname = 'blueprintsprograms';
 
         //Connection
         public function connect(){
