@@ -16,7 +16,10 @@ $app ->get('/api/allPrograms', function(Request $request, Response $response){
         $programs = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
 
-        echo json_encode($programs);
+        $response->getBody()->write(var_export($programs, true));
+        return $response;
+
+        //echo json_encode($programs);
     } catch (PDOException $exception){
         echo '{"error": {"text": '.$exception->getMessage().'}}';
     }
