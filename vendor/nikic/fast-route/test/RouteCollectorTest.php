@@ -53,11 +53,11 @@ class RouteCollectorTest extends \PHPUnit_Framework_TestCase {
             });
         });
 
-        $r->addGroup('/admin', function (DummyRouteCollector $r) {
-            $r->get('-some-info', 'admin-some-info');
+        $r->addGroup('/backup', function (DummyRouteCollector $r) {
+            $r->get('-some-info', 'backup-some-info');
         });
-        $r->addGroup('/admin-', function (DummyRouteCollector $r) {
-            $r->get('more-info', 'admin-more-info');
+        $r->addGroup('/backup-', function (DummyRouteCollector $r) {
+            $r->get('more-info', 'backup-more-info');
         });
 
         $expected = [
@@ -79,8 +79,8 @@ class RouteCollectorTest extends \PHPUnit_Framework_TestCase {
             ['PATCH', '/group-one/group-two/patch', 'patch'],
             ['POST', '/group-one/group-two/post', 'post'],
             ['PUT', '/group-one/group-two/put', 'put'],
-            ['GET', '/admin-some-info', 'admin-some-info'],
-            ['GET', '/admin-more-info', 'admin-more-info'],
+            ['GET', '/backup-some-info', 'backup-some-info'],
+            ['GET', '/backup-more-info', 'backup-more-info'],
         ];
 
         $this->assertSame($expected, $r->routes);
